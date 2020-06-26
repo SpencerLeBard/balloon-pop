@@ -1,0 +1,79 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Balloon Pop </title>
+  <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <header>
+    <div class="container shadow">
+      <img src="BALLOON_POP_logo.webp" alt="balloon pop logo">
+    </div>
+  </header>
+
+  <main class ="container card">
+
+    <form class = "d-flex space-between" id = "player-form"
+    onsubmit="setPlayer(event)">
+    <div>
+      <label for="name"> <i class="fa fa-user-circle" aria-hidden="true"></i>
+      <span> Player Name:</label></span>
+      <input type="text" name="playerName" required>
+    </div>
+    <button type="submit">OK</button>
+  </form>
+  
+  
+  <section id="game" class="game hidden">
+
+
+    <div>
+      <button id="start-button" onclick="startGame()">START GAME</button>
+    </div>
+    
+    <button id="inflate-button" onclick="inflate()" disabled="true">
+      Inflate
+      <span id="click-count"></span>
+    </button>
+    
+    
+    <div>
+      <span>Balloons Popped:</span>
+      <span id="pop-count">0</span>
+    </div>
+    
+    <div>
+      <span>Top Popped</span>
+      <span id="high-pop-count"> 0</span>
+    </div>
+    
+    <div>
+      <span>Time Remaining:</span>
+      <span id="countdown">0</span>
+    </div>
+
+    <div class="d-flex">
+      <div class="pump" onclick="inflate()">
+        <div class="handle"></div>
+        <div class="pump-box"></div>
+    </div>
+    <div id="balloon" class="balloon"></div>
+    </div>
+
+    </div>
+  </section>
+  
+</main>
+  
+  
+  <script src="main.js"></script>
+  
+</body>
+
+</html>
